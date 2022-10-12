@@ -1,16 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.git.krispi.answerquestion.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.09312320916905444" orientation="VERTICAL" prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <ToolBar layoutX="-1.0" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <Button mnemonicParsing="false" text="Открыть" />
+                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="379.0" />
+                    </items>
+                  </ToolBar>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <SplitPane dividerPositions="0.32961783439490444" orientation="VERTICAL" prefHeight="634.0" prefWidth="1004.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-2.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="998.0">
+                           <children>
+                              <Label layoutX="50.0" layoutY="3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="900.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="3.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="231.0">
+                           <children>
+                              <ToolBar layoutX="50.0" layoutY="367.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="199.0" style="-fx-background-color: eeeef;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="751.0" AnchorPane.topAnchor="367.0">
+                                <items>
+                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Проверить" />
+                                    <Button contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Далее" />
+                                </items>
+                              </ToolBar>
+                              <VBox layoutX="50.0" layoutY="7.0" prefHeight="340.0" prefWidth="900.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="7.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <CheckBox contentDisplay="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="16.0" />
+                                          <Label prefHeight="100.0" prefWidth="885.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="900.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" prefHeight="100.0" prefWidth="16.0" />
+                                          <Label prefHeight="95.0" prefWidth="885.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" prefHeight="100.0" prefWidth="16.0" />
+                                          <Label prefHeight="100.0" prefWidth="885.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" prefHeight="100.0" prefWidth="16.0" />
+                                          <Label prefHeight="100.0" prefWidth="885.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Label layoutX="927.0" layoutY="399.0" prefHeight="17.0" prefWidth="73.0" text="by Kriispiii" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="927.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="399.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
