@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -46,16 +47,16 @@ public class MainController {
     private Label answerLabel4;
 
     @FXML
-    private CheckBox check1;
+    private RadioButton check1;
 
     @FXML
-    private CheckBox check2;
+    private RadioButton check2;
 
     @FXML
-    private CheckBox check3;
+    private RadioButton check3;
 
     @FXML
-    private CheckBox check4;
+    private RadioButton check4;
 
     @FXML
     private void checkQuestion(){
