@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -58,10 +59,34 @@ public class MainController {
     @FXML
     private RadioButton check4;
 
-    @FXML
-    private void checkQuestion(){
 
+
+    @FXML
+    private void checkQuestion() {
+        if (currentQuestion != null) {
+            AnswerModel[] answerModels = currentQuestion.getAnswer();
+            AnswerModel trueAnswerModel = new AnswerModel();
+            for (int i = 0; i < 4; i++)
+                if (answerModels[i].isCheck()) trueAnswerModel = answerModels[i];
+            if (answerLabel1.getText() == trueAnswerModel.getAnswerModel())
+                answerLabel1.setTextFill(Color.GREEN);
+            else
+                answerLabel1.setTextFill(Color.RED);
+            if (answerLabel2.getText() == trueAnswerModel.getAnswerModel())
+                answerLabel2.setTextFill(Color.GREEN);
+            else
+                answerLabel2.setTextFill(Color.RED);
+            if (answerLabel3.getText() == trueAnswerModel.getAnswerModel())
+                answerLabel3.setTextFill(Color.GREEN);
+            else
+                answerLabel3.setTextFill(Color.RED);
+            if (answerLabel4.getText() == trueAnswerModel.getAnswerModel())
+                answerLabel4.setTextFill(Color.GREEN);
+            else
+                answerLabel4.setTextFill(Color.RED);
+        }
     }
+
     @FXML
     private void nextQuestion() {
         int r = maxQuestion;
@@ -76,6 +101,14 @@ public class MainController {
         answerLabel2.setText(currentQuestion.getAnswer()[list.get(1)].getAnswerModel());
         answerLabel3.setText(currentQuestion.getAnswer()[list.get(2)].getAnswerModel());
         answerLabel4.setText(currentQuestion.getAnswer()[list.get(3)].getAnswerModel());
+        check1.setSelected(false);
+        check2.setSelected(false);
+        check3.setSelected(false);
+        check4.setSelected(false);
+        answerLabel1.setTextFill(Color.BLACK);
+        answerLabel2.setTextFill(Color.BLACK);
+        answerLabel3.setTextFill(Color.BLACK);
+        answerLabel4.setTextFill(Color.BLACK);
     }
 
     @FXML
@@ -94,6 +127,7 @@ public class MainController {
             XSSFWorkbook myExcelBook = new XSSFWorkbook(pkg);
             XSSFSheet myExcelSheet = myExcelBook.getSheetAt(0);
             fillMap(myExcelSheet);
+            pkg.close();
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -109,7 +143,7 @@ public class MainController {
                 if (j == 1)
                     answerModel = new AnswerModel(true, cell.toString());
                 else
-                    answerModel = new AnswerModel(true, cell.toString());
+                    answerModel = new AnswerModel(false, cell.toString());
 
                 answers[j - 1] = answerModel;
             }

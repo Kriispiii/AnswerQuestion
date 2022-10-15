@@ -4,6 +4,9 @@ public class AnswerModel{
     boolean check;
     String Answer;
 
+    public AnswerModel() {
+    }
+
     AnswerModel(boolean check, String answer) {
         this.check = check;
         Answer = answer;
