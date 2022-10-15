@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -59,11 +60,12 @@ public class MainController {
     @FXML
     private RadioButton check4;
 
-
+    @FXML
+    ToggleGroup r1;
 
     @FXML
     private void checkQuestion() {
-        if (currentQuestion != null) {
+        if (currentQuestion != null && r1.getSelectedToggle().isSelected()) {
             AnswerModel[] answerModels = currentQuestion.getAnswer();
             AnswerModel trueAnswerModel = new AnswerModel();
             for (int i = 0; i < 4; i++)
